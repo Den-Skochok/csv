@@ -26,7 +26,6 @@ public class POTests extends BaseTest {
         rozetkaHeader.goToBasketPage();
         basketPage.getPriceElementInBasket();//тут не знаю але чомусь не працює, підкажіть пліз як
 //        Assert.assertTrue(Integer.parseInt(basketPage.priceElementInBasket) < 200000);
-        Thread.sleep(20000);
 
 
 
