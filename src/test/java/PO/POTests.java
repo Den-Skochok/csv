@@ -3,7 +3,6 @@ package PO;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Properties;
 import Properties.PropertyReader;
 
 public class POTests extends BaseTest {
@@ -21,13 +20,10 @@ public class POTests extends BaseTest {
         Thread.sleep(5000);
         filtersBlock.setSearchOnBrandFilter("hp");
         filtersBlock.chooseElementInAlphabetToggle(filtersBlock.hpLaptop);
-        sortsBlock.setSearchOnFiltersRozetka();
+        sortsBlock.setSortOnRozetka();
         resultPage.addToBasketFirstElement();
         rozetkaHeader.goToBasketPage();
-        basketPage.getPriceElementInBasket();//тут не знаю але чомусь не працює, підкажіть пліз як
-//        Assert.assertTrue(Integer.parseInt(basketPage.priceElementInBasket) < 200000);
-
-
+        basketPage.getPriceElementInBasket();
 
     }
 }
