@@ -1,6 +1,5 @@
 package PO;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Properties.PropertyReader;
@@ -23,7 +22,7 @@ public class POTests extends BaseTest {
         sortsBlock.setSortOnRozetka();
         resultPage.addToBasketFirstElement();
         rozetkaHeader.goToBasketPage();
-        basketPage.getPriceElementInBasket();
+        basketPage.checkElementInBasketIsLessThanValue(200000);
 
     }
 }
