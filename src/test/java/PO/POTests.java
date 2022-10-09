@@ -24,7 +24,7 @@ public class POTests extends BaseTest {
         sortsBlock.setSearchOnFiltersRozetka();
         resultPage.addToBasketFirstElement();
         rozetkaHeader.goToBasketPage();
-        basketPage.getPriceElementInBasket();
+        basketPage.getPriceElementInBasket();//тут не знаю але чомусь не працює, підкажіть пліз як
 //        Assert.assertTrue(Integer.parseInt(basketPage.priceElementInBasket) < 200000);
         Thread.sleep(20000);
 
