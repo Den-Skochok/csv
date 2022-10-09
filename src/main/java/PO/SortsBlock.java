@@ -10,13 +10,9 @@ public class SortsBlock extends BasePage {
     @FindBy(xpath = "//option[contains(@class, 'ng-star-inserted') and contains(@value, 1)]")
     public WebElement sortOptionFromCheapToExpensive;
 
-    public void setSearchOnFiltersRozetka() {
+    public void setSortOnRozetka() throws InterruptedException {
         sortButton.click();
         sortOptionFromCheapToExpensive.click();
-        try {
-            Thread.sleep(5);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        Thread.sleep(5000);
     }
 }
