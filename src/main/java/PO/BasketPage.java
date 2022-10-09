@@ -9,10 +9,7 @@ public class BasketPage extends BasePage{
     public WebElement priceElementInBasket;
 
 
-    public void getPriceElementInBasket(){
-//        return Integer.parseInt(priceElementInBasket.getText());
-//        Assert.assertTrue(Integer.parseInt(priceElementInBasket) < 200000);
-        System.out.println("123123");
-        priceElementInBasket.click();
+    public void checkElementInBasketIsLessThanValue(int value){
+        Assert.assertTrue(Integer.parseInt(priceElementInBasket.getText()) < value);
     }
 }
