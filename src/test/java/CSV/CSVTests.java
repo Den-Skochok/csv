@@ -37,8 +37,5 @@ public class CSVTests {
                 LOGGER.error("'" + firstColumnValue + "'" + " NOT CONTAINS " + "'" + secondColumnValue + "'");
             }
         }
-        String firstColumnValueReplace = firstColumnValue.replace(" ", "");
-        String secondColumnValueReplace = firstColumnValue.replace(" ", "");
-
     }
 }
