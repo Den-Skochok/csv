@@ -1,0 +1,87 @@
+Configuration:
+  Properties:
+    Property:
+      name: projectLogger
+      value: logs
+
+  Appenders:
+    Console:
+      - name: projectConsole
+        PatternLayout:
+          disableAnsi: false%msg
+          Pattern: "%highlight{%-5level}{FATAL=bg_red} %style{%data{yyyy-MM-dd HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
+#        Filters:
+#          ThresholdFilter:
+#            level: all
+#            onMatch: DENY
+#            onMismatch: NEUTRAL
+
+    File:
+      -
+        name: logNotOverwrittenFile
+        fileName: ${projectLogger}/logsNotOverwritten.log
+        PatternLayout:
+          Pattern: "%level %d{yyyy-MM-dd HH-mm-ss} %class{1}:%L - %msg%n"
+    #        Filters:
+    #          ThresholdFilter:
+    #            level: warn
+    #            onMatch: DENY
+    #            onMismatch: NEUTRAL
+
+#    RollingFile:
+#      - #By Size
+#        name: logOverwrittenBySizeFile
+#        fileName: ${projectLogger}/OverWritten/logOverwrittenBySizeFile.log
+#        filePattern: ${projectLogger}/OverWritten/logOverwrittenBySizeFile.log
+#        PatternLayout:
+#          Pattern: "%level %d{yyyy-MM-dd HH-mm-ss} %class{1}:%L - %msg%n"
+#        Policies:
+#          SizeBasedTriggeringPolicy:
+#            size: 100 B
+#        Filters:
+#          ThresholdFilter:
+#            level: warn
+#            onMatch: DENY
+#            onMismatch: NEUTRAL
+#
+#
+#      - #Every Day by time
+#        name: logOverwrittenEveryDayByTimeFile
+#        fileName: ${projectLogger}/OverWritten/logOverwrittenEveryDayByTimeFile.log
+#        filePattern: ${projectLogger}/OverWritten/logOverwrittenEveryDayByTimeFile.log
+#        PatternLayout:
+#          Pattern: "%level %d{yyyy-MM-dd HH-mm-ss} %class{1}:%L - %msg%n"
+#        CronTriggeringPolicy:
+#          schedule: "0 00 10 ? * *"
+#          evaluateOnStartup: true
+#        DefaultRolloverStrategy:
+#          max: 1
+#
+#      - #Every Day
+#        name: logOverwrittenEveryDayFile
+#        fileName: ${projectLogger}/OverWritten/logOverwrittenEveryDayFile.log
+#        filePattern: ${projectLogger}/OverWritten/logOverwrittenEveryDayFile-%d{yyyy-MM-dd}.log
+#        PatternLayout:
+#          Pattern: "%level %d{yyyy-MM-dd HH-mm-ss} %class{1}:%L - %msg%n"
+#        Policies:
+#          TimeBasedTriggeringPolicy:
+#            interval: 1
+#            modulate: true
+
+  Loggers:
+    Root:
+      level: all
+      AppenderRef:
+#        - ref: logNotOverwrittenFile
+#          level: all
+#        - ref: logOverwrittenBySizeFile
+#          level: all
+#        - ref: logOverwrittenEveryDayFile
+#          level: all
+#        - ref: logOverwrittenEveryDayByTimeFile
+#          level: all
+        - ref: projectConsole
+          level: all
+#        - ref: MailSendAppender
+#          level: all
+#    Logger:
