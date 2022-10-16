@@ -31,7 +31,6 @@ public class CSVTests {
         } else {
             if(firstColumnValue.contains(secondColumnValue)){
                 Assert.assertTrue(firstColumnValue.contains(secondColumnValue));
-//                LOGGER.debug("In " + firstColumnValue + " or " + secondColumnValue + " NO spaces");
                 LOGGER.info("'" + firstColumnValue + "'" + " contains " + "'" + secondColumnValue + "'");
             } else {
                 LOGGER.error("'" + firstColumnValue + "'" + " NOT CONTAINS " + "'" + secondColumnValue + "'");
